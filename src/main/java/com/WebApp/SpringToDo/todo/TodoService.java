@@ -3,8 +3,11 @@ package com.WebApp.SpringToDo.todo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
+
+import jakarta.validation.Valid;
 
 @Service
 public class TodoService {
@@ -25,5 +28,27 @@ public class TodoService {
 		
 		todos.add(new Todo(++todoCount, username, desc, targetdate, false));
 	}
+	
+	public void deleteTodo(int id) {
+		
+		
+		Predicate<? super Todo> Predicate = todo -> todo.getId() == id;
+		todos.removeIf(Predicate);
+	}
+	
+	public Todo findTodoById(int id) {
+		
+		Predicate<? super Todo> Predicate = todo -> todo.getId() == id;
+		Todo existingTodo = todos.stream().filter(Predicate).findFirst().get();
+		
+		return existingTodo;
+	}
+	
 
+	public void updateTodo(@Valid Todo todo) {
+		
+		deleteTodo(todo.getId());
+		
+		todos.add(todo);
+	}
 }

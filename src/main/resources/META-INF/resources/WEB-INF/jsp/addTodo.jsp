@@ -1,35 +1,40 @@
-<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
-<html>
-<head>
+<%@ include file="common/header.jspf"%>
 
-	<title>Todos</title>
-	
-	<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<header>
+	<%@ include file="common/navigation.jspf"%>
+</header>
 
-</head>
-<body style="background-color: #2B4162; color: #F9FCFF; padding: 20px;">
-
-	<header>
-		<h1>Add your new Todo</h1>
-	</header>
+<hr>
+<main class="container">
+	<hr>
+	<h2 class="text-center">Add Your Todo</h2>
 	<hr>
 
-	<main class="container">
-		
-		<form method="POST">
-			<label>Description:</label>
-			<input type="text" name="description"/>
-			<br><br>
-		
-			<button class="btn btn-success">Add New ToDo</button>
-		</form>
-	
-	</main>
+	<section
+		class="d-flex justify-content-center align-items-center flex-column">
+		<form:form method="POST" modelAttribute="todo">
+			<fieldset class="mb-3 d-flex flex-column">
+				<form:label path="description">Description:</form:label>
+				<form:input type="text" required="required" path="description" />
+				<form:errors path="description" cssClass="text-warning" />
+			</fieldset>
 
+			<fieldset class="mb-3 d-flex flex-column">
+				<form:label path="targetDate">Target Date:</form:label>
+				<form:input type="date" required="required" path="targetDate" />
+				<form:errors path="targetDate" cssClass="text-warning" />
+			</fieldset>
 
-	<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-	<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
-</body>
+			<form:input type="hidden" path="id" />
+			<form:input type="hidden" path="isDone" />
 
-</html>
+			<button class="btn btn-success container-fluid mt-4">Add New
+				ToDo</button>
+		</form:form>
+	</section>
+
+</main>
+<hr>
+
+<%@ include file="common/footer.jspf"%>

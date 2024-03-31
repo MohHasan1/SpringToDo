@@ -2,10 +2,16 @@ package com.WebApp.SpringToDo.todo;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class Todo {
 
 	private int id;
 	private String username;
+	
+	@NotBlank(message = "Description is required")
+	@Size(min=2, message = "Please Enter the description.")
 	private String description;
 	private LocalDate targetDate;
 	private Boolean isDone;

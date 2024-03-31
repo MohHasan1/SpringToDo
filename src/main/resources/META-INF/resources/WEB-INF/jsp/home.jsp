@@ -1,18 +1,19 @@
-<html>
-<head>
-<title>Home</title>
-</head>
-<body style="background-color: #2B4162; color: #F9FCFF; padding: 20px;">
-	<header>
-		<h1>Welome To Spring T0-D0</h1>
-	</header>
+<%@ include file="common/header.jspf"%>
 
-	<main class="container">
-
-		<a href="/todos">Manage Todo</a>
-	</main>
+<header>
+	<%@ include file="common/navigation.jspf"%>
+</header>
 
 
-</body>
+<hr>
+<main class="container">
+	<hr>
+	<h1 class="text-center">Welome To Spring To-Do</h1>
+	<hr>
 
-</html>
+	<a href="/todos" class="btn btn-success">Manage Todo</a>
+</main>
+<hr>
+
+<%@ include file="common/footer.jspf"%>
+
