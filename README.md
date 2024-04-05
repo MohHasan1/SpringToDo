@@ -9,6 +9,13 @@ This is a simple todo app created to practice various Spring technologies includ
 - Data persistence using MySQL database
 - Simple and intuitive user interface
 
+## Images
+![Alt Text 1](images/home.png)
+![Alt Text 2](images/list.png)
+![Alt Text 3](images/add.png)
+![Alt Text 4](images/login.png)
+
+
 ## Technologies Used
 
 - Java
