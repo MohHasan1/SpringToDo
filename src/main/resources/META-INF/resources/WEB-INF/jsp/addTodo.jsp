@@ -29,8 +29,7 @@
 			<form:input type="hidden" path="id" />
 			<form:input type="hidden" path="isDone" />
 
-			<button class="btn btn-success container-fluid mt-4">Add New
-				ToDo</button>
+			<button class="btn btn-success container-fluid mt-4">Submit</button>
 		</form:form>
 	</section>
 
