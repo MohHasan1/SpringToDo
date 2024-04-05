@@ -43,12 +43,13 @@ This is a simple todo app created to practice various Spring technologies includ
 
 Note: To access the MySQL database, download MySQL Shell from your browser and then use the following commands:
 
-mysqlsh
-\connect todos-user@localhost:3306
-\sql
-use todos
-select * from todo;
-\quit
+ ```bash
+    mysqlsh
+    \connect todos-user@localhost:3306
+    \sql
+    use todos
+    select * from todo;
+    \quit
 
 
 
